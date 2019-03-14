@@ -92,10 +92,39 @@ caches.match(_url).then(function(response){
     // use Selector by Id mhs-list
     // Replace inner HTML
     $('#mhs-list').html(result);
-
-
     });
     }
+
+    Notification.requestPermission(function(status){
+        console.log("Notification Permission ", status);
+    });
+
+    function displayNotification() {
+        if (Notification.permission === 'granted'){
+            navigator.serviceWorker.getRegistration()
+            .then(function(reg) {
+                var options = {
+                    body : 'ini body notifikasi',
+                    icon : 'images/logo.jpg',
+                    vibrate : [100,50,100],
+                    data : {
+                        dateOfArrival : Date.now(),
+                        primaryKey : 1
+                    },
+                    actions : [
+                        {action : 'explore', title : 'Kunjungi situs'},
+                        {action : 'close',  title : 'Tutup'}
+                    ]
+                }
+                reg.showNotification('Judul Notifikasi', options);
+            })
+        }
+    }
+
+    $('#btn-notification').on('click', function() {
+        displayNotification();
+    });
+
 });
 
 
