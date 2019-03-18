@@ -93,7 +93,10 @@ caches.match(_url).then(function(response){
     // Replace inner HTML
     $('#mhs-list').html(result);
     });
+
     }
+
+    
 
     Notification.requestPermission(function(status){
         console.log("Notification Permission ", status);

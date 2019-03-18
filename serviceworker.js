@@ -77,12 +77,12 @@ else {
   //     )
   //   );
   // });
-self.addEventListener('notificationonclick', function(e) {
+self.addEventListener('notificationclick', function(e) {
   var notification = e.notification;
   var primaryKey = notification.data.primaryKey;
   var action = e.action;
 
-  //console.log(primaryKey);
+  console.log(primaryKey);
 
   if (action === 'close'){
     notification.close();
