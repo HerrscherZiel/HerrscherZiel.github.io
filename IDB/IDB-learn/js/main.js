@@ -18,6 +18,7 @@ function createDatabase() {
         db.error = handleError;
         console.log('Berhasil melakukan koneksi ke database lokal');
         // do something...
+        bacaDariDatabase();
     }
 }
 
@@ -109,7 +110,7 @@ function bacaDariDatabase() {
 }
 
 function hapusBaris(e) {
-    if (e.target.type === button){
+    if (e.target.type === 'button'){
         var hapus = confirm('Apakah anda yakin akan menghapus data ?');
         if (hapus){
             tabel.deleteRow(tabel.rows.namedItem(e.target.id).sectionRowIndex);

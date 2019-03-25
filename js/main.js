@@ -9,7 +9,7 @@ $(document).ready(function(){
     //Store Gender for Option
     var gender_opt = '';
 
-    //Store All gener from API
+    //Store All gender from API
     var gender = [];
 
     //$.get (_url,function(data){

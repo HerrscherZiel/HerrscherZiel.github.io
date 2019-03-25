@@ -36,6 +36,7 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
   var request=event.request;
   var url =new URL(request.url);
+  
   //memsisahkan file dengan cache url;
 if (url.origin=== location.origin){
   event.respondWith(
