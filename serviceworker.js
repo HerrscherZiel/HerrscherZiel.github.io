@@ -3,7 +3,7 @@ var urlsToCache = [
   '/',
   '/css/main.css',
   '/js/main.js',
-  '/images/logo.jpg',
+  '/images/man.png',
   '/js/jquery.min.js',
   '/fallback.json'
 ];
@@ -65,19 +65,7 @@ else {
 }
 
 });
-  //   event.respondWith(
-  //     caches.match(event.request)
-  //       .then(function(response) {
-  //        console.log(response);
-  //         // Cache hit - return response
-  //         if (response) {
-  //           return response;
-  //         }
-  //         return fetch(event.request);
-  //       }
-  //     )
-  //   );
-  // });
+  
 self.addEventListener('notificationclick', function(e) {
   var notification = e.notification;
   var primaryKey = notification.data.primaryKey;

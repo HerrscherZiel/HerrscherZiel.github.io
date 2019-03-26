@@ -1,10 +1,9 @@
 {
-  "name": "PWA",
-  "short_name": "PWA",
-  "theme_color": "#37c183",
-  "background_color": "#388e62",
+  "name": "LOGIN-PAGE",
+  "short_name": "LOGIN",
+  "theme_color": "#1e2122",
+  "background_color": "#10171d",
   "display": "fullscreen",
-  "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
   "icons": [
