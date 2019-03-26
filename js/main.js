@@ -1,52 +1,6 @@
 $(document).ready(function(){
 
 
-    Notification.requestPermission(function(status){
-        console.log("Notification Permission ", status);
-    });
-
-    function displayNotification() {
-        if (Notification.permission === 'granted'){
-            navigator.serviceWorker.getRegistration()
-            .then(function(reg) {
-                var options = {
-                    body : 'ini body notifikasi',
-                    icon : 'images/man.png',
-                    vibrate : [100,50,100],
-                    data : {
-                        dateOfArrival : Date.now(),
-                        primaryKey : 1
-                    },
-                    actions : [
-                        {action : 'explore', title : 'Kunjungi situs'},
-                        {action : 'close',  title : 'Tutup'}
-                    ]
-                }
-                reg.showNotification('Judul Notifikasi', options);
-            })
-        }
-    }
-
-    $('#btn-notification').on('click', function() {
-        displayNotification();
-    });
-
-    function isOnline() {
-        var connectionStatus = $('#connection-status');
-        if(navigator.onLine){
-            connectionStatus.html = '<p> anda online </p>';
-        }else{
-            connectionStatus.html = '<p> anda offline </p>';
-        }
-    }
-
-    window.addEventListener('online', isOnline);
-    window.addEventListener('offline', isOnline);
-    isOnline();
-
-});
-
-
 //Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
